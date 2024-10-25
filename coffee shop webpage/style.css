@@ -1,0 +1,192 @@
+:root{
+--salmon: linear-gradient(135deg, wheat, rgb(248, 214, 141));
+--black:black;
+--white:wheat; 
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    background-image: url('mtn\ pic.png');
+    background-size: cover; /* Makes the image cover the whole page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Makes the background stay in place when scrolling */
+}
+
+.navbar{
+    background: var(--salmon);
+    height: 60px;
+    padding: 0.5rem calc((100vw - 1200px)/2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-logo{
+    padding-left:2rem;
+    text-decoration: none;
+    color: black;
+    font-size: 2.5rem;
+    font-family: "Cormorant Garamond", serif;
+    
+}
+
+.name-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+
+.navbar-link{
+    display: inline-block;
+    text-decoration:none;
+    padding: 0rem 1rem;
+    color: black;
+    transition:transform 0.3s;
+ 
+    font-family: "Arima", system-ui;
+    font-weight: bold;
+    font-size: x-large;
+    
+}
+
+.navbar-link:hover{
+    color:white ;
+    transform: translateY(-10px);
+}
+
+
+
+
+
+
+@media  screen and (max-width:768px) {
+    .navbar-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-menu{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 100px);
+        position: absolute;
+        width: 100%;
+        top: -1000px;
+        
+    
+    }
+    .navbar-menu.active {
+        top: 100%;
+        opacity: 1;
+        z-index: 99;
+        height: 100vh;
+        font-size: 1.5rem;
+        background: wheat;
+    }
+    .toggle-menu .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: black;
+        display: block;
+        cursor: pointer;
+    }
+    #mobile-menu{
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        transform: translate(5%,20%);
+    }
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.info p{
+    font-family: "Londrina Sketch", sans-serif;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.coffee{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coffee p{
+    font-size: xx-large;
+    padding: 50px;
+    font-family: "Cormorant Garamond", serif;
+
+}
+
+.coffee img{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .coffee {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;    /* Center items */
+    }
+
+    .coffee img {
+        margin-bottom: 20px; /* Add spacing below the image */
+        width: 100%;         /* Make the image responsive (optional) */
+        max-width: px;    /* Prevent it from getting too large */
+    }
+
+    .coffee p {
+        padding: 10px; /* Adjust padding to make the text more readable */
+        text-align: center; /* Center-align text on smaller screens */
+    }
+}
+
+.socials{
+    position:;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    gap: 30px;
+}
+
+.socials img{
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.socials img:hover{
+    color:white ;
+    transform: translateY(-10px);
+}
